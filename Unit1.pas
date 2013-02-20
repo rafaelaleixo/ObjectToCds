@@ -160,14 +160,9 @@ begin
     else
     if LowerCase(Info^.PropType^.Name) = 'integer' then
       cds.FieldDefs.add(List[I]^.Name, ftInteger);
-
-
   end;
   cds.CreateDataSet;
 end;
-
-
-
 end.
 
 
