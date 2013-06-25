@@ -2,7 +2,9 @@ program Project1;
 
 uses
   Forms,
-  Unit1 in 'Unit1.pas' {Form1};
+  Unit1 in 'Unit1.pas' {Form1},
+  uProperts in 'uProperts.pas',
+  uUsuario in 'uUsuario.pas';
 
 {$R *.RES}
 
