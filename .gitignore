@@ -15,7 +15,12 @@ local.properties
 .classpath
 .settings/
 .loadpath
-
+*.~dfm
+*.dcu
+*.~pas
+*.cfg
+*.dof
+*.res
 # External tool builders
 .externalToolBuilders/
 
