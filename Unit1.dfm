@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 192
-  Top = 105
+  Left = 330
+  Top = 147
   Width = 718
   Height = 247
   Caption = 'Form1'
@@ -43,6 +43,15 @@ object Form1: TForm1
     Height = 153
     ItemHeight = 13
     TabOrder = 2
+  end
+  object Button2: TButton
+    Left = 64
+    Top = 168
+    Width = 75
+    Height = 25
+    Caption = 'Button2'
+    TabOrder = 3
+    OnClick = Button2Click
   end
   object cds: TClientDataSet
     Aggregates = <>

@@ -12,6 +12,8 @@ type
   protected
     function GetListProperts(PropList: PPropList): Integer; virtual; abstract;
     function GetListInfo(const PropName: string): PPropInfo;  virtual; abstract;
+  public
+    function GetCdsOleVariant: olevariant;
   end;
 
 implementation
@@ -20,6 +22,11 @@ uses
   classes, SysUtils;
 
 { TProperts }
+
+function TProperts.GetCdsOleVariant: olevariant;
+begin
+
+end;
 
 function TProperts.GetListNameProperts: string;
 var

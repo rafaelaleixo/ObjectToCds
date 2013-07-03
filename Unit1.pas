@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  StdCtrls, Grids, DBGrids, Db, dbclient;
+  StdCtrls, Grids, DBGrids, Db, dbclient, uUsuario;
 
 type
   TPropriedades = class
@@ -22,10 +22,13 @@ type
     grid: TDBGrid;
     Button1: TButton;
     ListBox1: TListBox;
+    Button2: TButton;
     procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
   private
     oPropriedades: TPropriedades;
+    oUsuario: TUsuario;
     procedure CriarFields;
     procedure PreencherFields;
     procedure teste;
@@ -91,6 +94,7 @@ end;
 procedure TForm1.FormCreate(Sender: TObject);
 begin
   oPropriedades := TPropriedades.Create;
+  oUsuario := TUsuario.Create;
 end;
 
 procedure TForm1.ListComponentProperties(Component: TComponent; Strings: TStrings);
@@ -112,6 +116,7 @@ begin
         PropOrEvent := 'Event'
       else
         PropOrEvent := 'Property';
+
       PropValue := VarToStr(GetPropValue(Component, PropInfo^.Name));
       Strings.Add(Format('[%s] %s: %s = %s', [PropOrEvent, PropInfo^.Name,
         PropInfo^.PropType^.Name, PropValue]));
@@ -161,12 +166,16 @@ begin
     if LowerCase(Info^.PropType^.Name) = 'integer' then
       cds.FieldDefs.add(List[I]^.Name, ftInteger);
 
-
   end;
   cds.CreateDataSet;
 end;
 
 
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+  oUsuario.get
+end;
 
 end.
 
