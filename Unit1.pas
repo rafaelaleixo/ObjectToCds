@@ -24,8 +24,8 @@ type
     ListBox1: TListBox;
     Button2: TButton;
     procedure Button1Click(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     oPropriedades: TPropriedades;
     oUsuario: TUsuario;
@@ -84,6 +84,11 @@ begin
 
   ConvertObjetoToCds(oPropriedades, cds);
   PreencherFields;
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+ oUsuario.GetCdsOlevariant;
 end;
 
 procedure Tform1.teste;
@@ -171,11 +176,6 @@ begin
 end;
 
 
-
-procedure TForm1.Button2Click(Sender: TObject);
-begin
-  oUsuario.get
-end;
 
 end.
 

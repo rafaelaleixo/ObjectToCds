@@ -7,9 +7,10 @@ uses
 
 type
   TProperts = class
-  private
-    function GetListNameProperts: string;
   protected
+    function GetListNameProperts: string;
+    function GetNameField(psText: string): string;
+    function GetTypeField(psText: string): string;
     function GetListProperts(PropList: PPropList): Integer; virtual; abstract;
     function GetListInfo(const PropName: string): PPropInfo;  virtual; abstract;
   public
@@ -50,6 +51,15 @@ begin
   end;
 end;
 
+function TProperts.GetNameField(psText: string): string;
+begin
+  result := copy(psText, 1, pos('|', psText));
+end;
+
+function TProperts.GetTypeField(psText: string): string;
+begin
+  result := copy(psText, pos('|', psText), Length(psText));
+end;
 
 end.
  
